@@ -14,9 +14,7 @@ body {
   color: #e5e7eb;
 }
 
-/* ==========================================
-   BARRA DE NAVEGACIÓN (NAVBAR)
-   ========================================== */
+/* Header & Navegación */
 .navbar {
   background: #2a2d34;
   border-bottom: 1px solid #3f444e;
@@ -147,9 +145,7 @@ body {
   background: #b91c1c;
 }
 
-/* ==========================================
-   CONTENEDOR Y ESTRUCTURA DE LA SERIE II
-   ========================================== */
+/* Catálogo & Filtros */
 .main-container {
   max-width: 1240px;
   margin: 0 auto;
@@ -212,7 +208,7 @@ body {
 .gallery-header h2 {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #1f2937; /* Contraste nítido con el fondo */
+  color: #1f2937;
 }
 
 .count-badge {
@@ -231,7 +227,6 @@ body {
   gap: 22px;
 }
 
-/* TARJETAS DE VIDEOS CON TU ESTILO */
 .video-card {
   background: #2a2d34; 
   border: 1px solid #3f444e;
@@ -355,9 +350,7 @@ body {
   color: #9ca3af;
 }
 
-/* ==========================================
-   ESTILOS DE LOS FORMULARIOS Y LOGIN 
-   ========================================== */
+/* Modales & Formularios de Registro/Login */
 .container {
   width: 100%;
   max-width: 480px;
@@ -389,7 +382,6 @@ body {
   color: #9ca3af; 
 }
 
-/* Pestañas */
 .tabs {
   display: flex;
   background: #ffffff; 
@@ -422,7 +414,6 @@ body {
   color: #0284c7;
 }
 
-/* Formularios */
 .form {
   display: none;
   flex-direction: column;
@@ -472,7 +463,6 @@ input::placeholder {
   color: #9ca3af;
 }
 
-/* Botones */
 .btn-primary {
   margin-top: 8px;
   padding: 12px;
@@ -513,7 +503,6 @@ input::placeholder {
   color: #ffffff;
 }
 
-/* Alertas */
 .alert {
   padding: 12px 16px;
   border-radius: 8px;
@@ -537,38 +526,7 @@ input::placeholder {
   display: none !important;
 }
 
-/* Panel de Sesión */
-.session-panel {
-  text-align: center;
-  padding: 12px 0;
-}
-
-.session-badge {
-  display: inline-block;
-  background: rgba(56, 189, 248, 0.15);
-  color: #38bdf8;
-  border: 1px solid #38bdf8;
-  padding: 5px 14px;
-  border-radius: 20px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  margin-bottom: 14px;
-}
-
-.session-panel h3 {
-  font-size: 1.35rem;
-  margin-bottom: 8px;
-  color: #f9fafb;
-}
-
-.session-panel p {
-  color: #9ca3af;
-  font-size: 0.92rem;
-}
-
-/* ==========================================
-   MODALES (VIDEO Y AUTENTICACIÓN)
-   ========================================== */
+/* Modales */
 .modal {
   position: fixed;
   inset: 0;
@@ -595,6 +553,7 @@ input::placeholder {
   z-index: 10;
   max-height: 90vh;
   overflow-y: auto;
+  overflow-x: hidden !important;
 }
 
 .modal-close {
@@ -620,12 +579,15 @@ input::placeholder {
   padding: 34px 28px;
 }
 
-/* REPRODUCTOR Y DETALLES DEL VIDEO */
+/* Modal de Video & Reproductor */
 .video-modal-box {
   width: 100%;
   max-width: 860px;
-  padding: 0;
-  overflow: hidden;
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden !important;
+  display: flex;
+  flex-direction: column;
 }
 
 .player-wrapper {
@@ -674,28 +636,33 @@ input::placeholder {
   margin-bottom: 18px;
 }
 
+/* Barra de Interacción & Me Gusta */
 .interaction-bar {
+  margin: 14px 0 18px 0;
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 20px;
+  gap: 12px;
 }
 
 .btn-like {
-  background: #23252a;
+  background: #1e2025;
   border: 1px solid #3f444e;
   color: #f3f4f6;
-  padding: 8px 16px;
+  padding: 8px 18px;
   border-radius: 20px;
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 600;
-  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
 }
 
 .btn-like:hover {
   border-color: #ef4444;
   color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
 }
 
 .btn-like.liked {
@@ -716,37 +683,59 @@ input::placeholder {
   margin: 18px 0;
 }
 
-/* COMENTARIOS */
+/* Sección de Comentarios */
+.comments-section {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
 .comments-section h3 {
-  font-size: 1.1rem;
-  margin-bottom: 14px;
-  color: #e5e7eb;
+  font-size: 1.15rem;
+  color: #f3f4f6;
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
 .new-comment-box {
-  margin-bottom: 20px;
+  width: 100%;
+  margin-bottom: 12px;
 }
 
 .comment-input-area {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 }
 
 .comment-input-area textarea {
   width: 100%;
-  padding: 10px 14px;
+  min-height: 80px;
+  padding: 12px 14px;
   background: #ffffff;
   border: 1px solid #3f444e;
   border-radius: 8px;
   color: #111827;
+  font-size: 0.92rem;
   resize: vertical;
-  min-height: 70px;
-  font-size: 0.9rem;
+  outline: none;
+}
+
+.comment-input-area textarea:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+.comment-input-area button {
+  align-self: flex-end;
+  padding: 9px 18px;
 }
 
 .comment-guest-lock {
-  background: #23252a;
+  background: #1e2025;
   border: 1px dashed #3f444e;
   padding: 14px;
   border-radius: 8px;
@@ -765,52 +754,118 @@ input::placeholder {
 .comments-list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
+  width: 100%;
+  max-height: 380px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 6px;
 }
 
 .comment-item {
-  background: #23252a;
+  background: #1e2025;
   border: 1px solid #373b44;
   border-radius: 10px;
-  padding: 14px;
+  padding: 14px 16px;
 }
 
 .comment-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 6px;
-  font-size: 0.82rem;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
 .comment-author {
   font-weight: 600;
   color: #38bdf8;
+  font-size: 0.88rem;
+}
+
+.comment-meta-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .comment-date {
-  color: #6b7280;
+  color: #9ca3af;
+  font-size: 0.78rem;
 }
 
 .comment-body {
-  font-size: 0.9rem;
-  color: #e5e7eb;
-  line-height: 1.4;
+  font-size: 0.92rem;
+  color: #f9fafb !important;
+  line-height: 1.45;
+  word-break: break-word;
 }
 
+.comment-actions-bar {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-reply {
+  background: transparent;
+  border: none;
+  color: #38bdf8;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn-reply:hover {
+  text-decoration: underline;
+}
+
+.btn-delete-comment {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.btn-delete-comment:hover {
+  opacity: 1;
+}
+
+/* Respuestas en 1er nivel */
 .replies-list {
-  margin-top: 10px;
+  margin-top: 12px;
   margin-left: 18px;
-  padding-left: 12px;
-  border-left: 2px solid #373b44;
+  padding-left: 14px;
+  border-left: 2px solid #0284c7;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .reply-item {
-  background: #2a2d34;
+  background: #282a30;
+  border: 1px solid #3a3f4b;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.reply-item .comment-body {
+  color: #e2e8f0 !important;
+  font-size: 0.85rem;
+}
+
+.reply-input-wrapper {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.reply-input-wrapper input {
+  flex: 1;
   padding: 8px 12px;
-  border-radius: 6px;
   font-size: 0.85rem;
 }
 
