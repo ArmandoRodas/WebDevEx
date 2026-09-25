@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plataforma de Videos Educativos - Acceso</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <h2>Catálogo de Videos Educativos</h2>
+        <p>Autenticación y Registro de Estudiantes</p>
+      </div>
+
+      <!-- Selector de pestañas -->
+      <div class="tabs">
+        <button id="tabLoginBtn" class="tab-btn active" onclick="switchTab('login')">Iniciar Sesión</button>
+        <button id="tabRegisterBtn" class="tab-btn" onclick="switchTab('register')">Registro</button>
+      </div>
+
+      <!-- Mensajes de feedback -->
+      <div id="alertBox" class="alert hidden"></div>
+
+      <!-- FORMULARIO LOGIN -->
+      <form id="loginForm" class="form active" onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label for="loginUser">Carné o Correo Electrónico</label>
+          <input 
+            type="text" 
+            id="loginUser" 
+            placeholder="Ej: 1890-20-11489 o usuario@correo.com" 
+            required 
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="loginPass">Contraseña (PIN numérico)</label>
+          <input 
+            type="password" 
+            id="loginPass" 
+            placeholder="Ingresa tu PIN numérico" 
+            inputmode="numeric"
+            pattern="[0-9]+"
+            title="La contraseña debe contener únicamente números"
+            required 
+          />
+        </div>
+
+        <button type="submit" id="btnLoginSubmit" class="btn-primary">Entrar a la Plataforma</button>
+      </form>
+
+      <!-- FORMULARIO REGISTRO -->
+      <form id="registerForm" class="form" onsubmit="handleRegister(event)">
+        <div class="form-group">
+          <label for="regCarne">Número de Carné (9999-99-99999)</label>
+          <input 
+            type="text" 
+            id="regCarne" 
+            placeholder="Ej: 1890-20-11489" 
+            maxlength="13" 
+            required 
+          />
+          <small class="hint">Formato requerido: 4 dígitos - 2 dígitos - 5 dígitos</small>
+        </div>
+
+        <div class="form-group">
+          <label for="regName">Nombre Completo</label>
+          <input 
+            type="text" 
+            id="regName" 
+            placeholder="Ej: JUAN PEREZ" 
+            required 
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="regEmail">Correo Electrónico</label>
+          <input 
+            type="email" 
+            id="regEmail" 
+            placeholder="usuario@dominio.com" 
+            required 
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="regPass">Contraseña PIN (Solo números)</label>
+          <input 
+            type="password" 
+            id="regPass" 
+            placeholder="Ej: 1234" 
+            inputmode="numeric"
+            pattern="[0-9]+"
+            title="La contraseña debe ser estrictamente numérica" 
+            required 
+          />
+          <small class="hint">Únicamente dígitos numéricos (sin letras ni espacios)</small>
+        </div>
+
+        <button type="submit" id="btnRegSubmit" class="btn-primary">Registrar Estudiante</button>
+      </form>
+
+      <!-- Panel de sesión iniciada (oculto inicialmente) -->
+      <div id="sessionPanel" class="session-panel hidden">
+        <div class="session-badge">✓ Sesión Activa</div>
+        <h3 id="sessionGreeting">¡Bienvenido!</h3>
+        <p id="sessionInfo"></p>
+        <button onclick="logout()" class="btn-secondary">Cerrar Sesión</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
