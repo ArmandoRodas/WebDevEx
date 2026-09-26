@@ -747,3 +747,10 @@ function getValidCarne() {
   localStorage.setItem("edu_user", JSON.stringify(currentUser));
   return fallback;
 }
+
+function logout() {
+  localStorage.removeItem("edu_user");
+  localStorage.removeItem("edu_registered_carne");
+  currentUser = null;
+  window.location.reload();
+}
